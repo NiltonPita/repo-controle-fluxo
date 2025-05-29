@@ -1,7 +1,8 @@
 name: workflow Events
 on:
   push:
-    branch: ["main", "feature/*"]
+    tags:
+      -v* 
 jobs:
   teste:
     runs-on: ubuntu-latest
