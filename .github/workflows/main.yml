@@ -5,7 +5,6 @@ jobs:
   teste:
     runs-on: ubuntu-latest
     steps:
-      - name: |
       - name: Action de Teste
         run: echo "Disparando o evento"
         
