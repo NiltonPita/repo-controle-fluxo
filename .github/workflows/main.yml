@@ -1,11 +1,13 @@
-name: workflow Events
-on:
-  push:
-    tags:
-      -v* 
-jobs:
-  teste:
+	name: workflow Events
+  on:
+    push:
+    branch: ["main", "feature/*"]
+    paths:
+      - "src/**"
+  jobs:
+    teste:
     runs-on: ubuntu-latest
     steps:
       - name: Action de Teste
-        run: echo "Action executada apenas em main e feature"
+      run: echo "Action executada apenas em main e feature"	
+						
