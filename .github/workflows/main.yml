@@ -1,12 +1,14 @@
-name: workflow Evento
+name: Workflow Evento
 on:
-  push:
-    branches: ["main", "feature/*"]
-    paths:
-      - "src/**"
+  pull_request:
+    branches:
+      - main
 jobs:
-  teste:
+  deploy:	    
     runs-on: ubuntu-latest
+    permissions: 
+      issues: write
+      pull-requests: write
     steps:
-      - name: Fake Teste
-        run: echo "Fake teste de ambiente"
+      - name: Adicionando funcionalidade
+        run: echo "Teste de action"
