@@ -8,5 +8,5 @@ jobs:
   teste:
     runs-on: ubuntu-latest
     steps:
-      - name: Action de Teste
-        run: echo ""action executa"
+      - name: Fake Teste
+        run: echo "Fake teste de ambiente"
