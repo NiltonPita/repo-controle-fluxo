@@ -10,4 +10,3 @@ jobs:
     steps:
       - name: Action de Teste
         run: echo "Action executada apenas em main e features"
-						
