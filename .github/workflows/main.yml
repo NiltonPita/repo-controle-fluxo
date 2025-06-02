@@ -1,4 +1,4 @@
-name: workflow Events
+name: workflow Evento
 on:
   push:
     branches: ["main", "feature/*"]
