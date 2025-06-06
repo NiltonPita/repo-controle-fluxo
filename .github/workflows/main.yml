@@ -2,7 +2,7 @@ name: workflow Events
 on:
   pull_request:
     branches: ["main"]
-    
+    types: closed
 jobs:
   teste:
     permissions: write-all
