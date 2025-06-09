@@ -1,8 +1,8 @@
 name: workflow Events
 on:
-  pull_request:
-    branches: ["main"]
-    types: closed 
+  schedule:
+    - cron: "*/2 * * * *"
+    - cron: "0 12 1 * *"
 jobs:
   teste:
     permissions: write-all
