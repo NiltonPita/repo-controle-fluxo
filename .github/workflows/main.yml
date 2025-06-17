@@ -1,25 +1,24 @@
 name: workflow Events
 on:
-  schedule:
-    - cron: "*/2 * * * *"
-    - cron: "0 12 1 * *"
+  workflow_dispatch:
+    inputs:
+      valor_string:
+        type: string
+        default: "Valor XPTO"
+      valor_bolean:
+        type: boleran
+        default: true
 jobs:
   teste:
     permissions: write-all
     runs-on: ubuntu-latest
     steps:
-      - name: Action de Teste
-        run: echo "Action executada apenas em main e features"
-      
-      - name: Alteração no card
-        uses: actions/github-script@v6
-        with:
-          script: |
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: 'Adicionando um comentário aqui sobre o PR'
-              })
-            
-          
+      - name: Operação com string
+        run: echo "${{" github.actor == inputs.valor_string }}"
+      - name: Operação com number
+        run: echo "${{ inputs.valor_numerico > 20}}"
+      - name: Operação boolean
+        run: echo "${{ !inputs.valor_boolean }}"
+        
+        
+    
