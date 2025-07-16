@@ -1,21 +1,13 @@
 name: workflow Events
 on:
-  workflow_dispatch:
-    inputs:
-      valor_string:
-        type: string
-        default: "Valor XPTO"
-      valor_bolean:
-        type: boleran
-        default: true
+  push:
 jobs:
-  teste:
-    permissions: write-all
-    runs-on: ubuntu-latest
-    steps:
-      - name: Função Contains
-        run: echo "${{ contains(inputs.valor_string, github.actor) }}"
-      - name: Função Format 
-        run: "echo ${{ format('Formato String: {0} - Formato Number: {1} - Formato Boolean: {2}', inputs.valor_string, inputs.valor_numerico, inputs.valor_bolean) }}"
-      - name: Função json
-        run: echo "${{ toJson(github) }}"
+    apenas-main:
+      name: Esse Jobs so executa na  ranch main
+      runs-on: ubuntu-latest
+      steps:
+        - name: Executar na main
+          run: scho "Executando comando na main"
+          
+
+
