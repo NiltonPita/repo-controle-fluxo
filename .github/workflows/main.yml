@@ -7,7 +7,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - name: Executar na main
-          run: scho "Executando comando na main"
+          run: echo "Executando comando na main"
           
 
 
