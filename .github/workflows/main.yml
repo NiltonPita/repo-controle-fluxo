@@ -3,11 +3,10 @@ on:
   push:
 jobs:
     apenas-main:
+      if: ${{github.ref =='refs/heads/main'}}
       name: Esse Jobs so executa na  ranch main
       runs-on: ubuntu-latest
       steps:
         - name: Executar na main
           run: echo "Executando comando na main"
           
-
-
