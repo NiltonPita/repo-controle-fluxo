@@ -2,6 +2,7 @@ name: workflow concorrencia
 run-name: Workflow Concorrencia ${{ github.rum_number }}
 on:
   workflow_dispatch:
+concurrency: pipeline-aula
 jobs:
   exemplo-fluxo-execucao-01:
     runs-on: ubuntu-latest
