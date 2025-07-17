@@ -17,6 +17,6 @@ jobs:
           if: ${{contains(github.ref =='refs/heads/hotfix')}}
           run: echo "Execução em Hotfix"
         - name: Execução em Main
-          if: ${{github.ref =='refs/heads/main'}}
+          if: ${{github.ref =='refs/heads/main'}} 
           run: echo "Execução em Main"
           
