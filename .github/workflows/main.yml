@@ -11,10 +11,10 @@ jobs:
       runs-on: ubuntu=latest
       steps:
         - name: Execução em Feature
-          if: ${{contains(github.ref =='refs/heads/Feature') }}
-          run: exho "Execução em Feature"
+          if: ${{contains(github.ref, 'refs/heads/Feature') }}
+          run: echo "Execução em Feature"
         - name: Execução em HotFix
-          if: ${{contains(github.ref =='refs/heads/hotfix')}}
+          if: ${{contains(github.ref, 'refs/heads/hotfix') }}
           run: echo "Execução em Hotfix"
         - name: Execução em Main
           if: ${{github.ref =='refs/heads/main'}} 
