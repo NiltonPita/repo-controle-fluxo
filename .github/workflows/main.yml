@@ -4,7 +4,7 @@ on:
   push:
 
 concurrency: 
-  group: ${{ inputs.ref }}
+  group: ${{ inputs.ref }}-${{ github.workflow}}
   cancel-in-progress: true
 
 jobs:
