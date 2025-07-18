@@ -11,10 +11,19 @@ concurrency: ${{ inputs.chave }}
 jobs:
   exemplo-fluxo-execucao-01:
     runs-on: ubuntu-latest
+    concurrency: ${{ inputs.chave }}
     steps:
       - name: Execução do job teste
         run: |
           sleep 120;
           echo "Action executada job 01"
-
+  exemplo-fluxo-execucao-02:
+    runs-on: ubuntu-latest
+    needs: [exemplo-fluxo-execucao-01]
+    concurrency: ${{ inputs.chave }}
+    steps:
+      - name: Execução do job teste
+        run: |
+          sleep 120;
+          echo "Action executada job 02"
    
